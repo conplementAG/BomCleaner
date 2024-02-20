@@ -33,3 +33,11 @@ jobs:
         name: dotnetbomcleaner
         path: ./dotnetbomcleaner
         compression-level: 0
+
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v0.${{ github.run_number }}.0
+        release_name: v0.${{ github.run_number }}.0
