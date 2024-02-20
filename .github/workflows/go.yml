@@ -61,6 +61,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create-new-release.output.upload_url }}
+          upload_url: ${{ steps.create-new-release.outputs.upload_url }}
           asset_path: ./dotnetbomcleaner
           asset_name: dotnetbomcleaner
