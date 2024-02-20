@@ -64,3 +64,4 @@ jobs:
           upload_url: ${{ steps.create-new-release.outputs.upload_url }}
           asset_path: ./dotnetbomcleaner
           asset_name: dotnetbomcleaner
+          asset_content_type: application/octet-stream
