@@ -25,11 +25,11 @@ jobs:
       run: go get github.com/CycloneDX/cyclonedx-go
       
     - name: Build
-      run: go build .\cmd\dotnetbomcleaner\
+      run: go build ./cmd/dotnetbomcleaner/
 
     - name: Upload executable
       uses: actions/upload-artifact@v4
       with:
         name: dotnetbomcleaner
-        path: .\dotnetbomcleaner
+        path: ./dotnetbomcleaner
         compression-level: 0
