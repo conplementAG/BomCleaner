@@ -48,9 +48,19 @@ jobs:
         run: ls -R
 
       - name: Create Release
+        id: create-new-release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v0.${{ github.run_number }}.0
           release_name: v0.${{ github.run_number }}.0
+
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create-new-release.output.upload_url }}
+          asset_path: ./dotnetbomcleaner
+          asset_name: dotnetbomcleaner
